@@ -1,0 +1,8 @@
+[flake8]
+# ignore these:
+# F403 = wildcard * imports
+# F405 = name not defined in * import
+# E501 = line too long
+# E265 = not having space between hash symbol in block comment
+# E722  = using bare try/except
+ignore = F403,F405,E501, E265, E722
