@@ -1,5 +1,5 @@
 .private
-*~
-*.swp
 .netrwhist
-colors
+keep
+check
+backup

@@ -26,6 +26,7 @@
       Plugin 'Valloric/YouCompleteMe'       " auto-completion
       Plugin 'sheerun/vim-polyglot'         " better syntax highlighting
       Plugin 'scrooloose/nerdtree'          " nerdtree file manager
+      Plugin 'Xuyuanp/nerdtree-git-plugin'  " nerdtree git integration
       Plugin 'jistr/vim-nerdtree-tabs'      " change nerdtree behavior with tabs open
       Plugin 'w0rp/ale'                     " asynchronous linting
       call vundle#end()
@@ -88,11 +89,9 @@
 
 " BEHAVIOR
 " =========
-      "set noswapfile                 " disable swap file
-      "set clipboard=unnamed          " set system clipboard as default
-      "set undofile                   " persistent undo history
-      "set undodir=~//undodir         " designate undo directory
       filetype plugin indent on
+      set directory=~/.vim/backup/    " put swap files here
+      set backupdir=~/.vim/backup/    " put backup files here
       set encoding=utf-8
       set mouse=a                     " enable mouse in all modes
       set backspace=indent,eol,start  " enable backspace to delete certain characters
@@ -105,6 +104,10 @@
       set scrolloff=5                 " scroll x amount of lines past buffer
       set wildmenu                    " command line autocompletion
       set wildmode=longest:list,full
+      "set noswapfile                 " disable swap file
+      "set clipboard=unnamed          " set system clipboard as default
+      "set undofile                   " persistent undo history
+      "set undodir=~//undodir         " designate undo directory
 
 
 " APPEARANCE
@@ -112,10 +115,7 @@
       "set nowrap                " disable word wrapping
       "set textwidth=0           " wrap text after x amount of chars
       "set noshowmode            " mode is displayed in custom statusline
-      "set number                " show line numbers
-      "set cursorline            " line number highlighting 
-      "set relativenumber        " possibly laggy, numbers are relative to current line
-      colorscheme custom_code1  " set syntax colorscheme
+      colorscheme code-one  " set syntax colorscheme
       syntax on                 " syntax highlighting
       set showcmd               " show current command
       set cmdheight=1           " command bar height
@@ -133,6 +133,11 @@
       highlight PmenuSbar ctermfg=238 ctermbg=0
       highlight PmenuThumb ctermfg=102 ctermbg=234
       highlight QuickFixLine ctermfg=250 ctermbg=238  " Color of Ale's list
+
+      " Line Numbering
+      "set number                " show line numbers
+      "set cursorline            " line number highlighting 
+      "set relativenumber        " possibly laggy, numbers are relative to current line
       
       " Highlight current line number:
       "highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
