@@ -179,5 +179,19 @@ if [ -f ~/.dotfiles/.bash_aliases ]; then
     . ~/.dotfiles/.bash_aliases
 fi
 
+
+# enable bash completion in interactive shells
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+  . ~/.dotfiles/.autocomplete/.docker_autocomplete.sh
+  . ~/.dotfiles/.autocomplete/.docker-compose_autocomplete.sh
+  . ~/.dotfiles/.autocomplete/.kubectl_autocomplete.sh
+  . ~/.dotfiles/.autocomplete/.minikube_autocomplete.sh
+fi
+
 # turn on vim command line mode
 set -o vi

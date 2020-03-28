@@ -5,16 +5,16 @@
 [alias]
   cob = checkout -b
 
-  # cleaner or shorter output
-  l = log --oneline --abbrev-commit
-  s = status -sb
+  # cleaner/shorter output
   b = branch -a
+  d = diff --compact-summary --summary
   grip = grep --break --heading --line-number
   gripi = grep --break --heading --line-number -i
-  comdiff = diff --compact-summary --summary
+  l = log --oneline --abbrev-commit --graph
+  s = status -sb
 
   # commit all changes
-  cm = !git add -A && git commit -av
+  cm = !git add -u && git commit -av
 
   # show last commit
   last = log -1 HEAD
@@ -69,7 +69,7 @@
   remote = red bold
 
 [color "diff"]
-  meta = yellow bold
+  meta = yellow bold  # file info
   frag = magenta bold  # line info
   old = red
   new = green

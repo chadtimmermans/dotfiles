@@ -1,5 +1,10 @@
-.private
+*.orig
+
 .netrwhist
-keep
-check
-backup
+.private
+.ycm_extra_conf.py
+
+.tmux/
+.vim/backup/
+.vim/colors/check/
+.vim/colors/keep/
